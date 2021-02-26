@@ -26,10 +26,14 @@
 
   <div id="inv">
     <div id="item-list">
+      <div class="title">Ingredients you have:</div>
       {{#each items}}
-      <div>
-        <div>{{name}}</div>
-        <div>{{quantity}} {{unit}}</div>
+      <div class="item">
+        <div class="name">{{name}}</div>
+        <div class="info">{{quantity}} {{unit}}
+          <button class="delBtn">Delete</button>
+        </div>
+
       </div>
       {{/each}}
     </div>
@@ -69,7 +73,7 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#addItem">Add New Item</button>
+      <button type="button" class="addBtn btn btn-lg" data-toggle="modal" data-target="#addItem">Add New Item</button>
     </div>
   </div>
 
