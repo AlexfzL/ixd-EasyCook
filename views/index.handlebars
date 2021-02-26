@@ -15,6 +15,13 @@
 </head>
 
 <body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="/recipes">EasyCook</a>
+		    </div>
+  		</div>
+	</nav>
 	<div class="tab-content">
 		<div id="home" class="tab-pane fade in active">
 			<div class="recipe_list">
@@ -30,7 +37,29 @@
 			</div>
 		</div>
 		<div id="like" class="tab-pane fade">
-			<h3>Recipes you like</h3>
+			<div class="recipe_list">
+				{{#each recipes}}
+					{{#if isLike}}
+						<div class="recipe" id="{{id}}">
+							<a href="/recipe/{{name}}">
+								<img src="images/{{image}}" alt="{{name}} pic" class="img">
+								<div class="recipe_name">{{name}}</div>
+							</a>
+
+							<div style="margin-top: 36px; float: right">
+						        <select style="margin-right: 30px">
+									<option>Ingredients</option>>
+									{{#each ingredient}}
+										<option>{{this}}</option>>
+									{{/each}}
+						        </select>
+						        <button>Remove</button>
+						    </div>
+
+						</div>
+					{{/if}}
+				{{/each}}
+			</div>
 		</div>
 		<div id="inv" class="tab-pane fade">
 			<h3>Inventory</h3>
