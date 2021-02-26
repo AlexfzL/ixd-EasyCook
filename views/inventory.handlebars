@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <title>EasyCook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <link href="/css/home.css" rel="stylesheet">
+  <link href="/css/inventory.css" rel="stylesheet">
+  <script src="/js/home.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/recipes">EasyCook</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="inv">
+    <div id="item-list">
+      {{#each items}}
+      <div>
+        <div>{{name}}</div>
+        <div>{{quantity}} {{unit}}</div>
+      </div>
+      {{/each}}
+    </div>
+    <div id="add-item">
+      <div class="modal fade" id="addItem" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add the food you have!</h4>
+            </div>
+            <div class="modal-body">
+              <form id="add-item-form" action="/addItem">
+                <div class="form-group">
+                  <label for="name">Food name</label>
+                  <input required id="item-name" name="name" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input required type="number" id="item-quantity" name="quantity" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="unit">Unit</label>
+                  <input id="item-unit" class="form-control" name="unit" list="units">
+                  <datalist id="units">
+                    <option value="lb">
+                    <option value="kg">
+                    <option value="pack">
+                  </datalist>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-default" form="add-item-form">Confirm</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#addItem">Add New Item</button>
+    </div>
+  </div>
+
+  {{!-- navbar starts here --}}
+  <ul class="nav nav-pills">
+    <li id="home" style="float: left;"><a href="/recipes">Recipes</a></li>
+    <li id="like" style="display: inline-block;"><a href="/like">Like</a></li>
+    <li id="inventory" style="float: right;" class="active"><a href="/inventory">Inventory</a></li>
+  </ul>
+</body>
+
+</html>

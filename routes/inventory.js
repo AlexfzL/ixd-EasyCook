@@ -1,29 +1,19 @@
-var data = {
-  "item-list": [{
-      "name": "bacon",
-      "quantity": "2",
-      "unit": "pack"
-    },
-    {
-      "name": "chicken breast",
-      "quantity": "3",
-      "unit": "lb"
-    }
-  ]
-}
+var items = require("../items.json");
 
 exports.view = function(req, res) {
-  res.send(data);
-}
+  res.render('inventory', items);
+};
 
 exports.addItem = function(req, res) {
-  var name = req.body.name;
-  var quantity = req.body.quantity;
-  var unit = req.body.unit;
-
-  console.log(name);
-
-  data["item-list"].push({ "name": name, "quantity": quantity, "unit": unit });
-  console.log(data);
-  res.send(data);
+  var name = req.query.name;
+  var quantity = req.query.quantity;
+  var unit = req.query.unit;
+  var newItem = {
+    "name": name,
+    "quantity": quantity,
+    "unit": unit
+  };
+  console.log(newItem);
+  items.items.push(newItem);
+  res.render('inventory', items);
 }

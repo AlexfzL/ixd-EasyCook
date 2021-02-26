@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <title>EasyCook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <link href="/css/home.css" rel="stylesheet">
+  <script src="/js/home.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/recipes">EasyCook</a>
+      </div>
+    </div>
+  </nav>
+  <div>
+    {{!-- like tab starts --}}
+    <div id="like">
+      <div class="recipe_list">
+        {{#each recipes}}
+        {{#if isLike}}
+        <div class="recipe" id="{{id}}">
+          <a href="/recipe/{{name}}">
+            <img src="images/{{image}}" alt="{{name}} pic" class="img">
+            <div class="recipe_name">{{name}}</div>
+          </a>
+
+          <div style="margin-top: 36px; float: right">
+            <select style="margin-right: 30px">
+              <option>Ingredients</option>>
+              {{#each ingredient}}
+              <option>{{this}}</option>>
+              {{/each}}
+            </select>
+            <button>Remove</button>
+          </div>
+
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+    {{!-- like tab ends--}}
+
+    {{!-- navbar starts here --}}
+    <ul class="nav nav-pills">
+      <li id="home" style="float: left;"><a href="/recipes">Recipes</a></li>
+      <li id="like" style="display: inline-block;" class="active"><a href="/like">Like</a></li>
+      <li id="inventory" style="float: right;"><a href="/inventory">Inventory</a></li>
+    </ul>
+</body>
+
+</html>
