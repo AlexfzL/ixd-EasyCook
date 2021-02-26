@@ -11,18 +11,19 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 
 	<link href="/css/home.css" rel="stylesheet">
-
+	<script src="/js/home.js"></script>
 </head>
 
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="/recipes">EasyCook</a>
-		    </div>
-  		</div>
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/recipes">EasyCook</a>
+			</div>
+		</div>
 	</nav>
 	<div class="tab-content">
+		{{!-- recipe/home tab starts--}}
 		<div id="home" class="tab-pane fade in active">
 			<div class="recipe_list">
 				{{#each recipes}}
@@ -36,42 +37,92 @@
 				{{/each}}
 			</div>
 		</div>
+		{{!-- recipe/home tab ends--}}
+
+
+		{{!-- like tab starts --}}
 		<div id="like" class="tab-pane fade">
 			<div class="recipe_list">
 				{{#each recipes}}
-					{{#if isLike}}
-						<div class="recipe" id="{{id}}">
-							<a href="/recipe/{{name}}">
-								<img src="images/{{image}}" alt="{{name}} pic" class="img">
-								<div class="recipe_name">{{name}}</div>
-							</a>
+				{{#if isLike}}
+				<div class="recipe" id="{{id}}">
+					<a href="/recipe/{{name}}">
+						<img src="images/{{image}}" alt="{{name}} pic" class="img">
+						<div class="recipe_name">{{name}}</div>
+					</a>
 
-							<div style="margin-top: 36px; float: right">
-						        <select style="margin-right: 30px">
-									<option>Ingredients</option>>
-									{{#each ingredient}}
-										<option>{{this}}</option>>
-									{{/each}}
-						        </select>
-						        <button>Remove</button>
-						    </div>
+					<div style="margin-top: 36px; float: right">
+						<select style="margin-right: 30px">
+							<option>Ingredients</option>>
+							{{#each ingredient}}
+							<option>{{this}}</option>>
+							{{/each}}
+						</select>
+						<button>Remove</button>
+					</div>
 
-						</div>
-					{{/if}}
+				</div>
+				{{/if}}
 				{{/each}}
 			</div>
 		</div>
+		{{!-- like tab ends--}}
+
+
+		{{!-- inventory tab starts--}}
 		<div id="inv" class="tab-pane fade">
-			<h3>Inventory</h3>
+			<div id="item-list">
+				{{!-- add list here --}}
+			</div>
+			<div id="add-item">
+				<div class="modal fade" id="addItem" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Add the food you just bought!</h4>
+							</div>
+							<div class="modal-body">
+								<form id="add-item-form">
+									<div class="form-group">
+										<label for="name">Food name</label>
+										<input required id="item-name" name="item-name" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="quantity">Quantity</label>
+										<input required type="number" id="item-quantity" name="item-quantity" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="unit">Unit</label>
+										<input id="item-unit" class="form-control" name="item-unit" list="units">
+										<datalist id="units">
+											<option value="lb">
+											<option value="kg">
+											<option value="pack">
+										</datalist>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-default" form="add-item-form">Confirm</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addItem">Add New
+					Item</button>
+			</div>
 		</div>
 	</div>
+	{{!-- inventory tab starts--}}
 
 
 	{{!-- navbar starts here --}}
 	<ul class="nav nav-pills">
-		<li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-		<li><a data-toggle="pill" href="#like">Like</a></li>
-		<li><a data-toggle="pill" href="#inv">Inventory</a></li>
+		<li id="home" style="float: left;" class="active"><a data-toggle="pill" href="#home">Home</a></li>
+		<li id="like" style="display: inline-block;"><a data-toggle="pill" href="#like">Like</a></li>
+		<li id="inventory" style="float: right;"><a data-toggle="pill" href="#inv">Inventory</a></li>
 	</ul>
 </body>
 
