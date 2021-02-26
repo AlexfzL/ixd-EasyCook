@@ -5,6 +5,7 @@
       "id": 1,
 			"name": "Cheese Cake",
 			"image": "cheesecake.jpg",
+      "isLike": true,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -33,6 +34,7 @@
       "id": 2,
 			"name": "French Fries",
 			"image": "fish-and-chips.jpg",
+      "isLike": true,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -61,6 +63,7 @@
       "id": 3,
 			"name": "Chicken Soup",
 			"image": "chicken-soup.jpg",
+      "isLike": true,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -89,6 +92,7 @@
       "id": 4,
 			"name": "Lasagna",
 			"image": "lasagna.jpg",
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -117,6 +121,7 @@
       "id": 5,
 			"name": "French Fries",
 			"image": "french-fries.jpg",
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -145,6 +150,7 @@
       "id": 6,
 			"name": "Lasagna",
 			"image": "lasagna.jpg",
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -173,6 +179,7 @@
       "id": 7,
 			"name": "Cheese Cake",
 			"image": "cheesecake.jpg",
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -201,6 +208,7 @@
       "id": 8,
 			"name": "Fish and Chips",
 			"image": "fish-and-chips.jpg",
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -229,6 +237,7 @@
       "id": 9,
 			"name": "Chicken Soup",
 			"image": "chicken-soup.jpg",
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
