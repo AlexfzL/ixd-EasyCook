@@ -4,5 +4,5 @@ $(document).ready(function() {
 
 function initializePage() {
   // your code here
-
-}
+  console.log("Page ready");
+};

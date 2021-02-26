@@ -9,6 +9,8 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var recipe = require('./routes/recipe');
+var like = require('./routes/like');
+var inventory = require('./routes/inventory');
 // Example route
 // var user = require('./routes/user');
 
@@ -44,6 +46,12 @@ app.post('/login', index.handleLogin);
 // handle view recipes
 app.get('/recipes', recipe.view);
 app.get('/recipe/:name', recipe.viewRecipe);
+// handle like tab
+app.get('/like', like.view);
+// handle inventory tab
+app.get('/inventory', inventory.view);
+app.get('/addItem', inventory.addItem);
+
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

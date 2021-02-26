@@ -60,7 +60,11 @@ a, a:active, a:visited, a:link{
 
 .nav li{
   line-height: 50px;
-  width: 33%;
+  width: 33.33%;
+}
+
+.nav-pills > li + li{
+  margin: 0;
 }
 
 .nav li a{

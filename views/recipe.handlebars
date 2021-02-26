@@ -4,22 +4,22 @@
 <head>
   <title>Recipe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/css/recipe.css">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/css/recipe.css">
+
 </head>
 
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/recipes">EasyCook</a>
-        </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/recipes">EasyCook</a>
       </div>
+    </div>
   </nav>
   <div class="container">
 
@@ -37,7 +37,7 @@
       <div class="ingredient">Ingredients:
         <ul>
           {{#each ingredient}}
-            <li>{{this}}</li>
+          <li>{{this}}</li>
           {{/each}}
         </ul>
       </div>
@@ -45,7 +45,7 @@
       <div class="steps">Steps:
         <ol>
           {{#each steps}}
-            <li>{{this}}</li>
+          <li>{{this}}</li>
           {{/each}}
         </ol>
       </div>
