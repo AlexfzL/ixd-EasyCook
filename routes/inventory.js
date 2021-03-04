@@ -5,9 +5,9 @@ exports.view = function(req, res) {
 };
 
 exports.addItem = function(req, res) {
-  var name = req.query.name;
-  var quantity = req.query.quantity;
-  var unit = req.query.unit;
+  var name = req.body.name;
+  var quantity = req.body.quantity;
+  var unit = req.body.unit;
   var newItem = {
     "name": name,
     "quantity": quantity,
@@ -15,5 +15,14 @@ exports.addItem = function(req, res) {
   };
   console.log(newItem);
   items.items.push(newItem);
+  res.render('inventory', items);
+}
+
+exports.deleteItem = function(req, res) {
+  var name = req.body.name;
+  items.items = items.items.filter(function(item) {
+    return item.name !== name
+  });
+  console.log(items);
   res.render('inventory', items);
 }
