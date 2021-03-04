@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "name": "bacon",
+      "quantity": "2",
+      "unit": "pack"
+    },
+    {
+      "name": "chicken breast",
+      "quantity": "3",
+      "unit": "lb"
+    },
+    {
+      "name": "egg",
+      "quantity": "2",
+      "unit": "pack"
+    }
+  ]
+}
