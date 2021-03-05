@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var recipe = require('./routes/recipe');
 var like = require('./routes/like');
 var inventory = require('./routes/inventory');
+var step = require('./routes/step');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +47,8 @@ app.post('/login', index.handleLogin);
 // handle view recipes
 app.get('/recipes', recipe.view);
 app.get('/recipe/:name', recipe.viewRecipe);
+// handle steps
+app.get('/recipe/:name/step', step.view);
 // handle like tab
 app.get('/like', like.view);
 // handle inventory tab
