@@ -12,6 +12,7 @@
 
   <link href="/css/home.css" rel="stylesheet">
   <script src="/js/home.js"></script>
+  <script src="/js/like.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,7 @@
             <div class="recipe_name">{{name}}</div>
           </a>
 
-          <div style="margin-top: 36px; float: right">
+         <!--  <div style="margin-top: 36px; float: right">
             <select style="margin-right: 30px">
               <option>Ingredients</option>>
               {{#each ingredient}}
@@ -42,7 +43,8 @@
               {{/each}}
             </select>
             <button>Remove</button>
-          </div>
+          </div> -->
+          <button class="dislikeBtn">Dislike</button>
 
         </div>
         {{/if}}
