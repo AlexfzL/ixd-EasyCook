@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
-
+  <script src="/js/recipe.js"></script>
   <link rel="stylesheet" href="/css/recipe.css">
 
 </head>
@@ -17,7 +17,8 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/recipes">EasyCook</a>
+        <a id="backBtn" href="/recipes"></a>
+        <div class="navbar-brand">{{name}}</div>
       </div>
     </div>
   </nav>
@@ -27,7 +28,7 @@
       <div class="recipe">
         <img src="/images/{{image}}" alt="{{name}} pic" class="img">
         <div class="recipe_info">
-          <div class="name">{{name}}</div>
+          {{!-- <div class="name">{{name}}</div> --}}
           <div class="des">{{description}}</div>
         </div>
         <button class="likeBtn">Like</button>
@@ -50,7 +51,7 @@
         </ol>
       </div>
     </div>
-    <div class="bottomBtn"><button class="startBtn">Start Cooking</button></div>
+    <div class="bottomBtn"><a id="startBtn" class="btn btn-primary" href="/recipe/{{name}}/step">Start Cooking</a></div>
 
   </div>
 
