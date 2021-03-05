@@ -25,6 +25,7 @@
   </nav>
 
   <div id="inv">
+    {{!-- items list --}}
     <div id="item-list">
       <div class="title">Ingredients you have:</div>
       {{#each items}}
@@ -33,10 +34,11 @@
         <div class="info">{{quantity}} {{unit}}
           <button type="submit" class="inv-delBtn"></button>
         </div>
-
       </div>
       {{/each}}
     </div>
+
+    {{!-- add item modal & button --}}
     <div id="add-item">
       <div class="modal fade" id="addItem" role="dialog">
         <div class="modal-dialog">
