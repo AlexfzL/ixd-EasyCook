@@ -51,8 +51,8 @@ app.get('/filter', recipe.filter);
 app.get('/like', like.view);
 // handle inventory tab
 app.get('/inventory', inventory.view);
-app.get('/addItem', inventory.addItem);
-
+app.post('/addItem', inventory.addItem);
+app.post('/deleteItem', inventory.deleteItem);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

@@ -12,7 +12,7 @@
 
   <link href="/css/home.css" rel="stylesheet">
   <link href="/css/inventory.css" rel="stylesheet">
-  <script src="/js/home.js"></script>
+  <script src="/js/inventory.js"></script>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
       <div class="item">
         <div class="name">{{name}}</div>
         <div class="info">{{quantity}} {{unit}}
-          <button class="delBtn">Delete</button>
+          <button type="submit" class="inv-delBtn"></button>
         </div>
 
       </div>
@@ -46,7 +46,7 @@
               <h4 class="modal-title">Add the food you have!</h4>
             </div>
             <div class="modal-body">
-              <form id="add-item-form" action="/addItem">
+              <form id="add-item-form">
                 <div class="form-group">
                   <label for="name">Food name</label>
                   <input required id="item-name" name="name" class="form-control">
@@ -73,7 +73,8 @@
           </div>
         </div>
       </div>
-      <button type="button" class="addBtn btn btn-lg" data-toggle="modal" data-target="#addItem">Add New Item</button>
+      <button type="button" class="inv-addBtn btn btn-lg" data-toggle="modal" data-target="#addItem">Add New
+        Item</button>
     </div>
   </div>
 
