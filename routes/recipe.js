@@ -22,6 +22,28 @@ exports.filter = function(req, res) {
   res.render('filter', filterRecipes);
 };
 
+exports.like = function(req, res) {
+  var id = req.body.id;
+  for (var i = 0; i < recipes['recipes'].length; i++) {
+    var recipe = recipes['recipes'][i];
+    if (recipe.id == id) {
+      recipe.isLike = true;
+    }
+  }
+  res.render('index', recipes);
+}
+
+exports.dislike = function(req, res) {
+  var id = req.body.id;
+  for (var i = 0; i < recipes['recipes'].length; i++) {
+    var recipe = recipes['recipes'][i];
+    if (recipe.id == id) {
+      recipe.isLike = false;
+    }
+  }
+  res.render('index', recipes);
+}
+
 exports.viewRecipe = function(req, res) {
   var name = req.params.name;
   console.log(name);

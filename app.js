@@ -47,6 +47,8 @@ app.post('/login', index.handleLogin);
 app.get('/recipes', recipe.view);
 app.get('/recipe/:name', recipe.viewRecipe);
 app.get('/filter', recipe.filter);
+app.post('/dislike', recipe.dislike);
+app.post('/like', recipe.like);
 // handle like tab
 app.get('/like', like.view);
 // handle inventory tab

@@ -34,7 +34,7 @@
       "id": 2,
 			"name": "French Fries",
 			"image": "fish-and-chips.jpg",
-      "isLike": true,
+      "isLike": false,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",
@@ -122,7 +122,7 @@
       "id": 5,
 			"name": "French Fries",
 			"image": "french-fries.jpg",
-      "isLike": false,
+      "isLike": true,
       "description": "A sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar.",
       "ingredient": [
         "6 tablespoons unsalted butter",

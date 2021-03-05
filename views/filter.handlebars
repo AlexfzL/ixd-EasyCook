@@ -13,6 +13,7 @@
 
 	<link href="/css/home.css" rel="stylesheet">
 	<script src="/js/home.js"></script>
+	<script src="/js/like.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,11 @@
 					<img src="images/{{image}}" alt="{{name}} pic" class="img">
 					<div class="recipe_name">{{name}}</div>
 				</a>
-				<button class="likeBtn">Like</button>
+				{{#if isLike}}
+				<button class="dislikeBtn btn-success">Like</button>
+				{{else}}
+				<button class="likeBtn ">Like</button>	
+				{{/if}}
 			</div>
 			{{/each}}
 		</div>
