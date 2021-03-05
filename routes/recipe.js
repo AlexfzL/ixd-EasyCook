@@ -4,6 +4,24 @@ exports.view = function(req, res) {
   res.render('index', recipes);
 };
 
+exports.filter = function(req, res) {
+  var items = require("../items.json");
+  var filterRecipes = {
+    "recipes": []
+  };
+  for (var i = 0; i < recipes['recipes'].length; i++) {
+    var recipe = recipes['recipes'][i];
+    var ingredient = recipe['ingredient'];
+    for (var j = 0; j < ingredient.length; j++){
+      if(ingredient[j].includes("chicken")) {
+        filterRecipes.recipes.push(recipe);
+        break;
+      }
+    }
+  }
+  res.render('filter', filterRecipes);
+};
+
 exports.viewRecipe = function(req, res) {
   var name = req.params.name;
   console.log(name);
