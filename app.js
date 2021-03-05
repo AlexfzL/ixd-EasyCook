@@ -49,6 +49,9 @@ app.get('/recipes', recipe.view);
 app.get('/recipe/:name', recipe.viewRecipe);
 // handle steps
 app.get('/recipe/:name/step', step.view);
+app.get('/filter', recipe.filter);
+app.post('/dislike', recipe.dislike);
+app.post('/like', recipe.like);
 // handle like tab
 app.get('/like', like.view);
 // handle inventory tab

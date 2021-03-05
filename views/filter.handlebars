@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<title>EasyCook</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+	<link href="/css/home.css" rel="stylesheet">
+	<script src="/js/home.js"></script>
+	<script src="/js/like.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/recipes">EasyCook</a>
+			<a class="navbar-brand pull-right" href="/recipes"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></a>
+		</div>
+	</nav>
+	{{!-- recipe/home tab starts--}}
+	<div id="home">
+		<div class="recipe_list">
+			{{#each recipes}}
+			<div class="recipe" id="{{id}}">
+				<a href="/recipe/{{name}}">
+					<img src="images/{{image}}" alt="{{name}} pic" class="img">
+					<div class="recipe_name">{{name}}</div>
+				</a>
+				{{#if isLike}}
+				<button class="dislikeBtn btn-success">Like</button>
+				{{else}}
+				<button class="likeBtn ">Like</button>	
+				{{/if}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{!-- recipe/home tab ends--}}
+	{{!-- navbar starts here --}}
+	<ul class="nav nav-pills">
+		<li id="home" style="float: left;" class="active"><a href="/recipes">Recipes</a></li>
+		<li id="like" style="display: inline-block;"><a href="/like">Like</a></li>
+		<li id="inventory" style="float: right;"><a href="/inventory">Inventory</a></li>
+	</ul>
+</body>
+
+</html>

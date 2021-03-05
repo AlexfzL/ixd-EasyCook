@@ -6,20 +6,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 
 	<link href="/css/home.css" rel="stylesheet">
 	<script src="/js/home.js"></script>
+	<script src="/js/like.js"></script>
 </head>
 
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/recipes">EasyCook</a>
-			</div>
+			<a class="navbar-brand" href="/recipes">EasyCook</a>
+			<a class="navbar-brand pull-right" href="/filter"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
 		</div>
 	</nav>
 	{{!-- recipe/home tab starts--}}
@@ -31,7 +32,12 @@
 					<img src="images/{{image}}" alt="{{name}} pic" class="img">
 					<div class="recipe_name">{{name}}</div>
 				</a>
-				<button class="likeBtn">Like</button>
+				{{#if isLike}}
+				<button class="dislikeBtn btn-success">Like</button>
+				{{else}}
+				<button class="likeBtn ">Like</button>	
+				{{/if}}
+
 			</div>
 			{{/each}}
 		</div>
